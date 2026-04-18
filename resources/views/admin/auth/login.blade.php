@@ -25,7 +25,7 @@
       <p class="login-box-msg">Sign in to start your session</p>
       
       @if($errors->has('email'))
-        <div calss="alert alert-denger">
+        <div calss="alert alert-danger">
           {{ $errors->first('email') }}
         </div>
       @endif

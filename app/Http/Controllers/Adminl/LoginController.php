@@ -23,8 +23,19 @@ class LoginController extends Controller
     ]);
        
      if(Auth::attempt($request->only('email','password'))){
-        return redirect()->route('adminl.dashboard');
-     }   
+        
+        $user=Auth::user();
+        if($user->hasRole('admin')){
+            return redirect()->route('adminl.dashboard');
+        } 
+
+        Auth::logout();
+
+        return back()->withErrors([
+        'email'=>"you do not have access admin "
+     ]);
+
+    }   
      return back()->withErrors([
         'email'=>"the provided credentials do not match our records "
      ]);
