@@ -6,7 +6,7 @@ use App\Models\Product;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class ProductsExport implements FromCollection
+class ProductsExport implements FromCollection, WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection
@@ -24,6 +24,6 @@ class ProductsExport implements FromCollection
      */
     public function headings(): array
     {
-        return ["ID", "Name", "Email","Description","Sku","Price","Category_id","Image_url"];
+        return ["ID", "Name","Description","Sku","Price","stock","Category_id","Image_url"];
     }
 }
