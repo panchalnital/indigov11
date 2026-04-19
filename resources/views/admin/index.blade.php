@@ -45,7 +45,7 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>2</h3>
+                <h3>{{ $user }}</h3>
 
                 <p>User Registrations</p>
               </div>
