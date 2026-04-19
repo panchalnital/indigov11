@@ -64,3 +64,31 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+composer create-project laravel/laravel:^11.0 indigov11
+
+config/database.php  comment this code 
+// 'charset' => env('DB_CHARSET', 'utf8mb4'),
+            //'collation' => env('DB_COLLATION', 'utf8mb4_0900_ai_ci'),
+			
+php artisan migrate
+
+
+php artisan optimize:clear
+1 https://www.youtube.com/watch?v=xyd_geKNT6w
+2 https://www.youtube.com/watch?v=4_scUW-e5OQ&t=411s			
+
+https://spatie.be/docs/laravel-permission/v7/introduction
+
+ composer require spatie/laravel-permission
+ 
+ php artisan migrate:fresh --seed
+ 
+ PHP Intelephense extendstion vs code
+ 
+ https://docs.laravel-excel.com/3.1/getting-started/installation.html
+
+ https://www.itsolutionstuff.com/post/laravel-11-import-export-excel-and-csv-file-tutorialexample.html#google_vignette
+ 
+ https://github.com/panchalnital/indigov11.git
