@@ -17,12 +17,12 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="admin/index2.html"><b>Admin</b>Login</a>
+    <a href="admin/index2.html"><b>Admin</b>Register</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+      <p class="login-box-msg">Register a new membership</p>
       
       @if($errors->has('email'))
         <div class="alert alert-danger" role="alert">
@@ -30,34 +30,44 @@
         </div>
       @endif
 
-      <form action="{{ route('adminl.login'); }} " method="post">
+      <form action="{{ route('adminl.registerpost'); }} " method="post">
         @csrf
         <div class="input-group mb-3">
-          <input type="email" name="email" class="form-control" placeholder="Email" 
-          class="form-control @error('email') is-invalid @enderror" >
+          <input type="text" name="name" class="form-control" placeholder="name"
+          class="form-control @error('name') is-invalid @enderror">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
             </div>
           </div>
-          </br>
-          
         </div>
         <div class="mb-3">
-          @error('email')
-           <span class="text-danger">{{ $message }}</span>
+           @error('name')
+            <span class="text-danger">{{ $message }}</span>
            @enderror
-          <div>
+         <div>
         <div class="input-group mb-3">
-          <input type="password" name="password" class="form-control" placeholder="Password"
+          <input type="email" name="email" class="form-control" placeholder="Email"
+          class="form-control @error('email') is-invalid @enderror">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="mb-3">
+           @error('email')
+            <span class="text-danger">{{ $message }}</span>
+           @enderror
+         <div>
+        <div class="input-group mb-3">
+          <input type="password" name="password" class="form-control" placeholder="password"
           class="form-control @error('password') is-invalid @enderror">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
             </div>
           </div>
-        </br>
-        
         </div>
         <div class="mb-3">
            @error('password')
@@ -80,10 +90,7 @@
           <!-- /.col -->
         </div>
       </form>
-      <p class="mb-0">
-        <a href="{{ route('adminl.register.page'); }}" class="text-center">Register a new membership</a>
-      </p>
-    </div>
+
 
     </div>
     <!-- /.login-card-body -->

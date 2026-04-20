@@ -25,6 +25,9 @@ Route::get('/adminl/login',[LoginController::class,'showLoginPage'])->name('admi
 
 Route::post('/adminl/login',[LoginController::class,'login'])->name('adminl.login');
 
+Route::get('/adminl/register',[LoginController::class,'showRegisterPage'])->name('adminl.register.page');
+Route::post('/adminl/registerpost',[LoginController::class,'save'])->name('adminl.registerpost');
+
 Route::get('dashboard',[DarshboarsController::class,'index'])->name('adminl.dashboard');
 Route::get('logout',[DarshboarsController::class,'logout'])->name('adminl.logout');
 
